@@ -1,12 +1,14 @@
 var path = require('path');
 var webpack = require('webpack');
+var HtmlWebpackPlugin = require('html-webpack-plugin');
+var temp = 'temp/';
 
 module.exports = {
 	devtool   : 'source-map',
 	entry     : './src/js/Main.js',
 	output    : {
-		path     : path.resolve(__dirname, 'tmp'),
-		filename : './js/bundle.js'
+		path     : path.resolve(__dirname, temp),
+		filename : './js/bundle.dev.js'
 	},
 	module    : {
 		rules : [
@@ -34,7 +36,7 @@ module.exports = {
 		extensions : ['.js']
 	},
 	devServer : {
-		contentBase : 'tmp/',
+		contentBase : temp,
 		inline      : true
 	},
 	plugins   : [
@@ -44,6 +46,10 @@ module.exports = {
 					configFile : './.eslintrc'
 				}
 			}
-		})
+		}),
+		new HtmlWebpackPlugin({
+			title: 'ES6 based client-side 3D configurator',
+			filename: 'index.html',
+		}),
 	],
 };
