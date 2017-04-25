@@ -2,7 +2,7 @@
   "name": "3D-configurator",
   "version": "1.0.0",
   "description": "ES6 based client-side 3D configurator",
-  "main": "index.js",
+  "main": "Main.js",
   "repository": "https://github.com/abdullahsari/3d-configurator",
   "author": "Muhammed <muhammed.sari@student.odisee.be>",
   "license": "MIT",
@@ -17,11 +17,11 @@
     "webpack": "^2.4.1",
     "webpack-dev-server": "^2.4.4"
   },
-  "scripts": {
-    "dev": "webpack-dev-server"
-  },
   "dependencies": {
     "babylonjs": "2.5",
     "howler": "^2.0.3"
+  },
+  "scripts": {
+    "dev": "webpack-dev-server"
   }
 }
