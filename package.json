@@ -1,0 +1,26 @@
+{
+  "name": "3D-configurator",
+  "version": "1.0.0",
+  "description": "ES6 based client-side 3D configurator",
+  "main": "index.js",
+  "repository": "https://github.com/abdullahsari/3d-configurator",
+  "author": "Muhammed <muhammed.sari@student.odisee.be>",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-core": "^6.24.1",
+    "babel-eslint": "^7.2.3",
+    "babel-loader": "^7.0.0",
+    "babel-preset-es2015": "^6.24.1",
+    "eslint": "^3.19.0",
+    "eslint-loader": "^1.7.1",
+    "webpack": "^2.4.1",
+    "webpack-dev-server": "^2.4.4"
+  },
+  "scripts": {
+    "dev": "webpack-dev-server"
+  },
+  "dependencies": {
+    "babylonjs": "2.5",
+    "howler": "^2.0.3"
+  }
+}
