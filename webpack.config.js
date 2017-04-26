@@ -48,8 +48,8 @@ module.exports = {
 			}
 		}),
 		new HtmlWebpackPlugin({
-			title: 'ES6 based client-side 3D configurator',
-			filename: 'index.html',
+			title    : 'ES6 based client-side 3D configurator',
+			filename : 'index.html',
 		}),
 	],
 };
