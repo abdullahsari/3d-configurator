@@ -1,5 +1,5 @@
 import BABYLON from 'babylonjs';
-import { CAMERA_LIMITS } from 'data/Constants';
+import { CAMERA_LIMITS } from './data/Constants';
 
 export default class Configurator {
 	constructor() {
