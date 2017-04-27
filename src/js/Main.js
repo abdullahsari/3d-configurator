@@ -1,7 +1,8 @@
-class Configurator {
-	constructor() {
-		this.canvas = document.createElement('canvas');
-	}
-}
+import Configurator from './Configurator';
 
-// starting template
+{
+	const config = new Configurator();
+	
+	// Event listeners
+	window.addEventListener('resize', config.resizeCanvas());
+}
