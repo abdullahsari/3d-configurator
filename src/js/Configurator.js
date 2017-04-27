@@ -1,4 +1,5 @@
 import BABYLON from 'babylonjs';
+import { CAMERA_LIMITS } from 'data/Constants';
 
 export default class Configurator {
 	constructor() {
@@ -36,9 +37,9 @@ export default class Configurator {
 		this.cameras = {
 			arc : new BABYLON.ArcRotateCamera('arc', 1, 0.8, 10, new BABYLON.Vector3.Zero(), this.scene),
 		};
-		this.cameras.arc.lowerRadiusLimit = 50;
-		this.cameras.arc.upperRadiusLimit = 150;
-		this.cameras.arc.upperBetaLimit = 1.5;
+		this.cameras.arc.lowerRadiusLimit = CAMERA_LIMITS.LOWER_RADIUS;
+		this.cameras.arc.upperRadiusLimit = CAMERA_LIMITS.UPPER_RADIUS;
+		this.cameras.arc.upperBetaLimit = CAMERA_LIMITS.UPPER_BETA;
 		this.cameras.arc.attachControl(canvas);
 	}
 	
