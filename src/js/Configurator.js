@@ -3,6 +3,18 @@ import BABYLON from 'babylonjs';
 export default class Configurator {
 	constructor() {
 		
+		// define data fields with initial values
+		this.engine = null;
+		this.scene = null;
+		this.lights = {};
+		this.cameras = {};
+		
+		// initialize application
+		init();
+	}
+	
+	init() {
+		
 		// create canvas and append to document body
 		const canvas = document.createElement('canvas');
 		canvas.style.width = '100%';
@@ -28,14 +40,15 @@ export default class Configurator {
 		this.cameras.arc.upperRadiusLimit = 150;
 		this.cameras.arc.upperBetaLimit = 1.5;
 		this.cameras.arc.attachControl(canvas);
-		
-		// render
-		this.engine.runRenderLoop(() => {
-			this.scene.render();
-		});
 	}
 	
 	resizeCanvas() {
 		this.engine.resize();
+	}
+	
+	render() {
+		this.engine.runRenderLoop(() => {
+			this.scene.render();
+		});
 	}
 }
