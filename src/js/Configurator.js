@@ -11,7 +11,7 @@ export default class Configurator {
 		this.cameras = {};
 
 		// initialize application
-		init();
+		this.init();
 	}
 
 	init() {
