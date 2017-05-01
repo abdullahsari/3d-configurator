@@ -28,6 +28,12 @@ module.exports = {
                     babelrc: false,
                     presets: ['es2015']
                 }
+            },
+            {
+                test   : /\.(jpg|jpeg|png|svg)$/,
+                exclude: /(bin|node_modules|bower_components|grunt|gulp|bower)/,
+                include: /src/,
+                loader : 'file'
             }
         ]
     },
