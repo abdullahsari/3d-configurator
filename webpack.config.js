@@ -5,6 +5,7 @@ var build = 'build';
 // plugins
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var CleanWebpackPlugin = require('clean-webpack-plugin');
+var CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
     devtool  : 'source-map',
@@ -78,6 +79,13 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: 'src/html/index.html'
         }),
-        new CleanWebpackPlugin([build])
+        new CleanWebpackPlugin([build]),
+        new CopyWebpackPlugin([
+            {
+                context: 'src/img',
+                from   : '**/*',
+                to     : 'img/'
+            }
+        ])
     ],
 };
