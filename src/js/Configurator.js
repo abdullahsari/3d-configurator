@@ -7,6 +7,7 @@ import Scene from './core/Scene';
 
 // Entities
 import Ground from './entities/Ground';
+import Skybox from './entities/Skybox';
 
 // Constants
 import { CAMERA_LIMITS, TEXTURES_DIR } from './data/Constants';
@@ -40,16 +41,9 @@ export default class Configurator {
         this.cameras.arc.attachControl(document.getElementById('renderContext'));
 
         // create skybox
-        this.skybox = BABYLON.Mesh.CreateBox('skybox', 1000, Scene);
-        const skyMat = new BABYLON.StandardMaterial('skybox', Scene);
-        skyMat.backFaceCulling = false;
-        skyMat.reflectionTexture = new BABYLON.CubeTexture(TEXTURES_DIR + 'skybox/skybox', Scene);
-        skyMat.reflectionTexture.coordinatesMode = BABYLON.Texture.SKYBOX_MODE;
-        skyMat.diffuseColor = new BABYLON.Color3(0, 0, 0);
-        skyMat.specularColor = new BABYLON.Color3(0, 0, 0);
-        this.skybox.material = skyMat;
+        this.skybox = new Skybox(Scene);
 
-        // ground
+        // create ground
         this.ground = new Ground(Scene);
     }
 
