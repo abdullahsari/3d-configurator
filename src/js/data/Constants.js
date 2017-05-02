@@ -10,3 +10,9 @@ export const GRAVITATIONAL_ACCELERATION = 9.81;
 
 // Directories
 export const TEXTURES_DIR = 'img/textures/';
+
+// Ground
+export const GROUND = Object.freeze({
+    SIZE        : 100,
+    SUBDIVISIONS: 10
+});
