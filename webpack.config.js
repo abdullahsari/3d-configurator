@@ -1,39 +1,56 @@
 var path = require('path');
 var webpack = require('webpack');
+var build = 'build';
+
+// plugins
 var HtmlWebpackPlugin = require('html-webpack-plugin');
-var temp = 'temp/';
+var CleanWebpackPlugin = require('clean-webpack-plugin');
 
 module.exports = {
     devtool  : 'source-map',
     entry    : './src/js/Main.js',
     output   : {
-        path    : path.resolve(__dirname, temp),
-        filename: './js/bundle.dev.js'
+        path    : path.resolve(__dirname, build),
+        filename: 'js/bundle.js'
     },
     module   : {
         rules: [
             {
                 enforce: 'pre',
                 test   : /\.js$/,
-                exclude: /(bin|node_modules|bower_components|grunt|gulp|bower)/,
-                include: /src/,
-                loader : 'eslint-loader'
+                exclude: /node_modules/,
+                use    : ['eslint-loader']
             },
             {
                 test   : /\.js$/,
-                exclude: /(bin|node_modules|bower_components|grunt|gulp|bower)/,
-                include: /src/,
-                loader : 'babel-loader',
-                query  : {
-                    babelrc: false,
-                    presets: ['es2015']
-                }
+                exclude: /node_modules/,
+                use    : [
+                    {
+                        loader : 'babel-loader',
+                        options: {
+                            presets: ['es2015']
+                        }
+                    }
+                ]
             },
             {
-                test   : /\.(jpg|jpeg|png|svg)$/,
-                exclude: /(bin|node_modules|bower_components|grunt|gulp|bower)/,
-                include: /src/,
-                loader : 'file'
+                test   : /\.html$/,
+                exclude: /node_modules/,
+                use    : ['html-loader']
+            },
+            {
+                test   : /\.(jpg|png)$/,
+                exclude: /node_modules/,
+                use    : [
+                    {
+                        loader : 'file-loader',
+                        options: {
+                            name      : '[path][name].[ext]',
+                            outputPath: 'img/'
+                        }
+                    }
+                ]
+
             }
         ]
     },
@@ -44,7 +61,7 @@ module.exports = {
         extensions: ['.js']
     },
     devServer: {
-        contentBase: temp,
+        contentBase: build,
         inline     : true
     },
     plugins  : [
@@ -59,8 +76,8 @@ module.exports = {
             }
         }),
         new HtmlWebpackPlugin({
-            title   : 'ES6 based client-side 3D configurator',
-            filename: 'index.html',
+            template: 'src/html/index.html'
         }),
+        new CleanWebpackPlugin([build])
     ],
 };
