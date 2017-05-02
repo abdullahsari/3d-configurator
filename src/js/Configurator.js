@@ -1,5 +1,5 @@
 import BABYLON from 'babylonjs';
-import { CAMERA_LIMITS } from './data/Constants';
+import { CAMERA_LIMITS, TEXTURES_DIR } from './data/Constants';
 
 export default class Configurator {
 	constructor() {
@@ -41,6 +41,16 @@ export default class Configurator {
 		this.cameras.arc.upperRadiusLimit = CAMERA_LIMITS.UPPER_RADIUS;
 		this.cameras.arc.upperBetaLimit = CAMERA_LIMITS.UPPER_BETA;
 		this.cameras.arc.attachControl(canvas);
+
+        // create skybox
+        this.skybox = BABYLON.Mesh.CreateBox('skybox', 1000, this.scene);
+        const skyMat = new BABYLON.StandardMaterial('skybox', this.scene);
+        skyMat.backFaceCulling = false;
+        skyMat.reflectionTexture = new BABYLON.CubeTexture(TEXTURES_DIR + 'skybox/skybox', this.scene);
+        skyMat.reflectionTexture.coordinatesMode = BABYLON.Texture.SKYBOX_MODE;
+        skyMat.diffuseColor = new BABYLON.Color3(0, 0, 0);
+        skyMat.specularColor = new BABYLON.Color3(0, 0, 0);
+        this.skybox.material = skyMat;
 	}
 
 	resizeCanvas() {
