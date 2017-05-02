@@ -1,9 +1,8 @@
 import BABYLON from 'babylonjs';
 
 // create canvas and append to document body
-const canvas = document.createElement('canvas');
+const canvas = document.getElementById('renderContext');
 canvas.style.width = '100%';
-document.body.appendChild(canvas);
 
 // boot the core
 const engine = new BABYLON.Engine(canvas, true);
