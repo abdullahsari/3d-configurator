@@ -1,4 +1,3 @@
-import BABYLON from 'babylonjs';
 import Scene from '../core/Scene';
 import { TEXTURES_DIR, GROUND } from '../data/Constants';
 
@@ -37,11 +36,11 @@ export default class SquareWall {
 
         // third wall
         walls[2].position.x = distance;
-        walls[2].rotation.y = Math.PI / 2;
+        walls[2].rotation.y = Utils.convertToRadian(90);
 
         // fourth wall
         walls[3].position.x = -distance;
-        walls[3].rotation.y = Math.PI / 2;
+        walls[3].rotation.y = Utils.convertToRadian(90);
 
         // merge individual walls to one unit so it forms a square
         this.mesh = BABYLON.Mesh.MergeMeshes(walls);

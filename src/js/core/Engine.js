@@ -1,5 +1,3 @@
-import BABYLON from 'babylonjs';
-
 // create canvas and append to document body
 const canvas = document.getElementById('renderContext');
 canvas.style.width = '100%';

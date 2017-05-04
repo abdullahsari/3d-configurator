@@ -1,6 +1,3 @@
-// BabylonJS
-import BABYLON from 'babylonjs';
-
 // Core components
 import Engine from './core/Engine';
 import Scene from './core/Scene';
@@ -8,6 +5,7 @@ import Scene from './core/Scene';
 // Entities
 import Ground from './entities/Ground';
 import Skybox from './entities/Skybox';
+import SquareWall from './entities/SquareWall';
 
 // Constants
 import { CAMERA_LIMITS, TEXTURES_DIR } from './data/Constants';
@@ -41,10 +39,13 @@ export default class Configurator {
         this.cameras.arc.attachControl(document.getElementById('renderContext'));
 
         // create skybox
-        this.skybox = new Skybox(Scene);
+        this.skybox = new Skybox();
 
         // create ground
-        this.ground = new Ground(Scene);
+        this.ground = new Ground();
+
+        // build wall
+        this.wall = new SquareWall();
     }
 
     render() {

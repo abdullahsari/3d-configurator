@@ -1,4 +1,3 @@
-import BABYLON from 'babylonjs';
 import Engine from './Engine';
 import { GRAVITATIONAL_ACCELERATION } from '../data/Constants';
 

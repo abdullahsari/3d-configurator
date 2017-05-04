@@ -1,4 +1,3 @@
-import BABYLON from 'babylonjs';
 import Scene from '../core/Scene';
 import { TEXTURES_DIR, GROUND } from '../data/Constants';
 
