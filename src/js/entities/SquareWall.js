@@ -36,11 +36,11 @@ export default class SquareWall {
 
         // third wall
         walls[2].position.x = distance;
-        walls[2].rotation.y = Utils.convertToRadian(90);
+        walls[2].rotation.y = Utils.degreesToRadians(90);
 
         // fourth wall
         walls[3].position.x = -distance;
-        walls[3].rotation.y = Utils.convertToRadian(90);
+        walls[3].rotation.y = Utils.degreesToRadians(90);
 
         // merge individual walls to one unit so it forms a square
         this.mesh = BABYLON.Mesh.MergeMeshes(walls);
