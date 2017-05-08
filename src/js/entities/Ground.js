@@ -13,8 +13,10 @@ export default class Ground {
         material.diffuseTexture = new BABYLON.Texture(URL, Scene);
         material.diffuseTexture.uScale = GROUND.SUBDIVISIONS;
         material.diffuseTexture.vScale = GROUND.SUBDIVISIONS;
-        material.specularColor = new BABYLON.Color3(0, 0, 0)
+        material.specularColor = new BABYLON.Color3(0, 0, 0);
         this.mesh.material = material;
         this.mesh.position = new BABYLON.Vector3.Zero();
+        this.mesh.receiveShadows = true;
+        this.mesh.checkCollisions = true;
     }
 }
