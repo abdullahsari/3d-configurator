@@ -6,6 +6,7 @@ import Scene from './core/Scene';
 import Ground from './entities/Ground';
 import Skybox from './entities/Skybox';
 import SquareWall from './entities/SquareWall';
+import Sun from './entities/Sun';
 
 // Constants
 import { CAMERA_LIMITS, TEXTURES_DIR } from './data/Constants';
@@ -24,11 +25,6 @@ export default class Configurator {
 
     init() {
 
-        // define lights
-        this.lights = {
-            hemi: new BABYLON.HemisphericLight('hemi', new BABYLON.Vector3(0, 1, 0), Scene),
-        };
-
         // define cameras
         this.cameras = {
             arc: new BABYLON.ArcRotateCamera('arc', 1, 0.8, 10, new BABYLON.Vector3.Zero(), Scene),
@@ -46,6 +42,9 @@ export default class Configurator {
 
         // build wall
         this.wall = new SquareWall();
+
+        // deploy sun in the sky
+        this.sun = new Sun();
     }
 
     render() {
