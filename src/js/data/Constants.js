@@ -13,7 +13,7 @@ export const TEXTURES_DIR = 'img/textures/';
 
 // Ground
 export const GROUND = Object.freeze({
-    SIZE        : 100,
+    SIZE        : 250,
     SUBDIVISIONS: 10
 });
 
