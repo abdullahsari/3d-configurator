@@ -11,6 +11,7 @@ scene.gravity = new BABYLON.Vector3(0, -GRAVITATIONAL_ACCELERATION, 0);
 scene.collisionsEnabled = true;
 
 // Hemispheric Lighting
-new BABYLON.HemisphericLight('hemi', new BABYLON.Vector3(0, 1, 0), scene);
+new BABYLON.HemisphericLight('hemi', new BABYLON.Vector3(1, 1, 0), scene);
+
 
 export default scene;
