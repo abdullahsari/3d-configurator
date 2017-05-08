@@ -1,5 +1,5 @@
 import Scene from '../core/Scene';
-import { DIRECTIONS } from '../data/Constants';
+import { DIRECTIONS, GROUND } from '../data/Constants';
 
 export default class Sun {
     constructor() {
@@ -20,7 +20,7 @@ export default class Sun {
     }
 
     move(direction) {
-        const radius = 75;
+        const radius = GROUND.SIZE * 0.75;
         let angle;
         switch (direction) {
             case DIRECTIONS.NORTH:
