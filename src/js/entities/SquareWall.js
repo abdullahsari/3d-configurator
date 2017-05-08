@@ -44,5 +44,6 @@ export default class SquareWall {
 
         // merge individual walls to one unit so it forms a square
         this.mesh = BABYLON.Mesh.MergeMeshes(walls);
+        this.mesh.checkCollisions = true;
     }
 }
