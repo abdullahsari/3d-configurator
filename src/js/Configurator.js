@@ -15,8 +15,11 @@ export default class Configurator {
     constructor() {
 
         // define data fields with initial values
-        this.lights = {};
         this.cameras = {};
+        this.sun = null;
+        this.skybox = null;
+        this.ground = null;
+        this.wall = null;
         this.skybox = null;
 
         // initialize application
