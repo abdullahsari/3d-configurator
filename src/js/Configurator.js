@@ -9,7 +9,7 @@ import SquareWall from './entities/SquareWall';
 import Sun from './entities/Sun';
 
 // Constants
-import { CAMERA_LIMITS, TEXTURES_DIR } from './data/Constants';
+import { CAMERA_LIMITS, CAMERA_SETTINGS } from './data/Constants';
 
 export default class Configurator {
     constructor() {
@@ -42,18 +42,15 @@ export default class Configurator {
         free.attachControl(canvas);
         free.applyGravity = true;
         free.checkCollisions = true;
-        free.keysUp.push(87); // W
-        free.keysDown.push(83); // S
-        free.keysLeft.push(65); // A
-        free.keysRight.push(68); // D
-        free.speed = 3;
-        free.inertia = 0.5;
-        free.angularSensibility = 1000;
+        free.keysUp.push(CAMERA_SETTINGS.KEYS_UP);
+        free.keysDown.push(CAMERA_SETTINGS.KEYS_DOWN);
+        free.keysLeft.push(CAMERA_SETTINGS.KEYS_LEFT);
+        free.keysRight.push(CAMERA_SETTINGS.KEYS_RIGHT);
+        free.speed = CAMERA_SETTINGS.SPEED;
+        free.inertia = CAMERA_SETTINGS.INERTIA;
+        free.angularSensibility = CAMERA_SETTINGS.NG_SENSIBILITY;
 
-        this.cameras = {
-            arc,
-            free
-        };
+        this.cameras = {arc, free};
 
         // deploy sun in the sky
         this.sun = new Sun();
