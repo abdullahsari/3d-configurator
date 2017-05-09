@@ -85,6 +85,10 @@ module.exports = {
                 context: 'src/img',
                 from   : '**/*',
                 to     : 'img/'
+            },
+            {
+                from: 'src/css',
+                to  : 'css/'
             }
         ]),
         new webpack.ProvidePlugin({
