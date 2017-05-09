@@ -16,7 +16,6 @@ export default class Ground {
         material.specularColor = new BABYLON.Color3(0, 0, 0);
         this.mesh.material = material;
         this.mesh.position = new BABYLON.Vector3.Zero();
-        this.mesh.receiveShadows = true;
         this.mesh.checkCollisions = true;
     }
 }

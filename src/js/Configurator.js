@@ -58,10 +58,6 @@ export default class Configurator {
         // deploy sun in the sky
         this.sun = new Sun();
 
-        // generate shadows
-        this.shadowGenerator = new BABYLON.ShadowGenerator(4096, this.sun.light);
-        this.shadowGenerator.usePoissonSampling = true;
-
         // create skybox
         this.skybox = new Skybox();
 
