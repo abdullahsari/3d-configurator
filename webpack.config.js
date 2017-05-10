@@ -85,7 +85,15 @@ module.exports = {
                 context: 'src/img',
                 from   : '**/*',
                 to     : 'img/'
+            },
+            {
+                from: 'src/css',
+                to  : 'css/'
             }
-        ])
+        ]),
+        new webpack.ProvidePlugin({
+            BABYLON: 'babylonjs',
+            Utils  : path.resolve(__dirname, 'src/js/common/utils'),
+        }),
     ],
 };
