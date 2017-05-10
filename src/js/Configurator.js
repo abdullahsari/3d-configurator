@@ -1,30 +1,28 @@
 // Core components
-import Engine from './core/Engine';
-import Scene from './core/Scene';
+import Engine from './core/engine';
+import Scene from './core/scene';
 
 // Entities
 import Environment from './entities/Environment';
 import Sun from './entities/Sun';
 
 // Constants
-import { CAMERA_LIMITS, CAMERA_SETTINGS } from './data/Constants';
+import { CAMERA_LIMITS, CAMERA_SETTINGS } from './data/constants';
 
+/**
+ * This class is the core of the application.
+ */
 export default class Configurator {
     constructor() {
 
-        // define data fields with initial values
-        this.cameras = {};
-        this.sun = null;
-        this.skybox = null;
-        this.ground = null;
-        this.wall = null;
-        this.skybox = null;
-
-        // initialize application
-        this.init();
+        // initialize 3D world
+        this.initWorld();
     }
 
-    init() {
+    /**
+     * Initializes the world/scene with everything that is needed
+     */
+    initWorld() {
 
         // grab the canvas
         const canvas = document.getElementById('renderContext');
@@ -33,13 +31,13 @@ export default class Configurator {
         const arc = new BABYLON.ArcRotateCamera('arc', 1, 0.8, 10, new BABYLON.Vector3.Zero(), Scene),
             free = new BABYLON.FreeCamera('free', new BABYLON.Vector3(0, 2, 50), Scene);
 
-        // rotation camera settings
+        // rotation-camera settings
         arc.lowerRadiusLimit = CAMERA_LIMITS.LOWER_RADIUS;
         arc.upperRadiusLimit = CAMERA_LIMITS.UPPER_RADIUS;
         arc.upperBetaLimit = CAMERA_LIMITS.UPPER_BETA;
         arc.attachControl(canvas);
 
-        // free camera settings
+        // freecamera settings
         free.attachControl(canvas);
         free.applyGravity = true;
         free.checkCollisions = true;
@@ -60,6 +58,9 @@ export default class Configurator {
         this.environment = new Environment();
     }
 
+    /**
+     * Starts rendering the scene on the HTML canvas
+     */
     render() {
         Engine.runRenderLoop(() => {
             Scene.render();

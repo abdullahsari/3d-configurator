@@ -27,7 +27,7 @@ export const GROUND = Object.freeze({
     SUBDIVISIONS: 10
 });
 
-// Cardinal Directions
+// Cardinal directions
 export const DIRECTIONS = Object.freeze({
     NORTH     : 'N',
     NORTH_EAST: 'NE',

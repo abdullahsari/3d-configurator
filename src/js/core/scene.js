@@ -1,5 +1,5 @@
-import Engine from './Engine';
-import { GRAVITATIONAL_ACCELERATION } from '../data/Constants';
+import Engine from './engine';
+import { GRAVITATIONAL_ACCELERATION } from '../data/constants';
 
 // Setup scene
 const scene = new BABYLON.Scene(Engine);
@@ -12,6 +12,5 @@ scene.collisionsEnabled = true;
 
 // Hemispheric Lighting
 new BABYLON.HemisphericLight('hemi', new BABYLON.Vector3(1, 1, 0), scene);
-
 
 export default scene;

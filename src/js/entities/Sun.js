@@ -1,6 +1,9 @@
-import Scene from '../core/Scene';
-import { DIRECTIONS, GROUND } from '../data/Constants';
+import Scene from '../core/scene';
+import { DIRECTIONS, GROUND } from '../data/constants';
 
+/**
+ * Handles the directional lighting for the scene
+ */
 export default class Sun {
     constructor(direction = DIRECTIONS.NORTH) {
 
@@ -20,6 +23,10 @@ export default class Sun {
         this.move(direction);
     }
 
+    /**
+     * Makes the sun mesh and lighting position move within the scene
+     * @param direction The cardinal direction the sun has to move to
+     */
     move(direction) {
         const radius = GROUND.SIZE * 0.75,
             y = -1;

@@ -1,11 +1,15 @@
-import Scene from '../core/Scene';
-import { TEXTURES_DIR, GROUND } from '../data/Constants';
+import Scene from '../core/scene';
+import { TEXTURES_DIR, GROUND } from '../data/constants';
 
 const URL = {
     skybox: `${TEXTURES_DIR}/skybox/skybox`,
     ground: `${TEXTURES_DIR}/ground/lawn.jpg`,
     wall  : `${TEXTURES_DIR}/wall/bricks.jpg`
 };
+
+/**
+ * Generates the environment for the scene
+ */
 export default class Environment {
     constructor() {
         this.createSkybox();
