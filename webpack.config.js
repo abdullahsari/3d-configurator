@@ -93,7 +93,7 @@ module.exports = {
         ]),
         new webpack.ProvidePlugin({
             BABYLON: 'babylonjs',
-            Utils  : path.resolve(__dirname, 'src/js/common/Utils'),
+            Utils  : path.resolve(__dirname, 'src/js/common/utils'),
         }),
     ],
 };
