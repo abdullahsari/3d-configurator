@@ -3,9 +3,7 @@ import Engine from './core/Engine';
 import Scene from './core/Scene';
 
 // Entities
-import Ground from './entities/Ground';
-import Skybox from './entities/Skybox';
-import SquareWall from './entities/SquareWall';
+import Environment from './entities/Environment';
 import Sun from './entities/Sun';
 
 // Constants
@@ -58,14 +56,8 @@ export default class Configurator {
         // deploy sun in the sky
         this.sun = new Sun();
 
-        // create skybox
-        this.skybox = new Skybox();
-
-        // create ground
-        this.ground = new Ground();
-
-        // build wall
-        this.wall = new SquareWall();
+        // generate environment
+        this.environment = new Environment();
     }
 
     render() {
