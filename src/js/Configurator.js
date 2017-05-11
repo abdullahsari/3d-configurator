@@ -12,7 +12,7 @@ import { CAMERA_LIMITS, CAMERA_SETTINGS } from './data/constants';
 /**
  * This class is the core of the application.
  */
-export default class Configurator {
+class Configurator {
     constructor() {
 
         // initialize 3D world
@@ -74,3 +74,5 @@ export default class Configurator {
         });
     }
 }
+
+export default new Configurator();
