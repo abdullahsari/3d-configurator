@@ -59,6 +59,13 @@ export default class Configurator {
     }
 
     /**
+     * Moves the sun to a given cardinal direction
+     */
+    moveSun(dir) {
+        this.sun.move(dir);
+    }
+
+    /**
      * Starts rendering the scene on the HTML canvas
      */
     render() {
