@@ -1,4 +1,5 @@
 import Illumination from './components/Illumination';
+import Camera from './components/Camera';
 
 const BTN_CLASS = 'btn',
     ACTIVE_CLASS = 'open';
@@ -11,6 +12,7 @@ export default class Panel {
         this.buttons = document.getElementsByClassName(BTN_CLASS);
         this.bindEvents();
         this.illumination = new Illumination();
+        this.camera = new Camera();
     }
 
     /**
