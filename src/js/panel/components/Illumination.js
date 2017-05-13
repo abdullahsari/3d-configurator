@@ -25,7 +25,7 @@ export default class Illumination {
         this.active.classList.remove(ACTIVE_CLASS);
 
         // set clicked orientation as active
-        node.classList.add(activeClass);
+        node.classList.add(ACTIVE_CLASS);
         this.active = node;
 
         // move sun in the scene
