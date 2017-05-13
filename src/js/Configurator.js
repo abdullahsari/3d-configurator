@@ -66,6 +66,15 @@ class Configurator {
     }
 
     /**
+     * Makes the scene switch between camera modes
+     * @param mode the camera type
+     */
+    setCameraMode(mode) {
+        const camera = this.cameras[mode];
+        Scene.activeCamera = camera;
+    }
+
+    /**
      * Starts rendering the scene on the HTML canvas
      */
     render() {
