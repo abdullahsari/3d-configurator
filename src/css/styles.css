@@ -93,11 +93,21 @@ canvas {
 /* Individual Panels */
 #lighting {
     top: 5rem;
+    z-index: 1000;
+}
+
+#camera {
+    top: 10.1rem;
+    z-index: 999;
 }
 
 /* Individual Buttons */
 #lighting .btn {
     background-image: url(../img/icons/sun.png);
+}
+
+#camera .btn {
+    background-image: url(../img/icons/cam.png);
 }
 
 /*************************************************
