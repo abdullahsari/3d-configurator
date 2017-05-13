@@ -30,6 +30,6 @@ e.g.:
 
 *Please note that these files are served from memory and are not located anywhere in the project folder itself.*
 ## Credits
-
+* [Joey Yakimowich-Payne](https://www.iconfinder.com/jyapayne) (Sun icon)
 ## License
 [MIT](https://opensource.org/licenses/MIT)

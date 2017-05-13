@@ -17,6 +17,9 @@ export default class Environment {
         this.createWalls();
     }
 
+    /**
+     * Generates the skybox
+     */
     createSkybox() {
         const skyMesh = BABYLON.Mesh.CreateBox('skybox', 1000, Scene);
         const skyMat = new BABYLON.StandardMaterial('skybox', Scene);
@@ -29,6 +32,9 @@ export default class Environment {
         this.skybox = skyMesh;
     }
 
+    /**
+     * Generates the surface
+     */
     createGround() {
         const groundMesh = BABYLON.MeshBuilder.CreateGround('ground', {
             width       : GROUND.SIZE,
@@ -46,6 +52,10 @@ export default class Environment {
         this.ground = groundMesh;
     }
 
+    /**
+     * Generates the walls
+     * @param height the height of the walls
+     */
     createWalls(height = 10) {
 
         // array that will hold the individual walls
