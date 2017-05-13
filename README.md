@@ -29,6 +29,10 @@ e.g.:
 * http://localhost:8080/css/styles.css
 
 *Please note that these files are served from memory and are not located anywhere in the project folder itself.*
+## Browser support
+![Chrome](https://github.com/alrra/browser-logos/blob/master/src/chrome/chrome_48x48.png?raw=true) | ![Firefox](https://github.com/alrra/browser-logos/blob/master/src/firefox/firefox_48x48.png?raw=true) | ![IE](https://github.com/alrra/browser-logos/blob/master/src/archive/internet-explorer_9-11/internet-explorer_9-11_48x48.png?raw=true) | ![Opera](https://github.com/alrra/browser-logos/blob/master/src/opera/opera_48x48.png?raw=true) | ![Safari](https://github.com/alrra/browser-logos/blob/master/src/safari/safari_48x48.png?raw=true) | ![Edge](https://github.com/alrra/browser-logos/blob/master/src/edge/edge_48x48.png?raw=true)
+--- | --- | --- | --- | --- | --- |
+8+ ✔ | 4+ ✔ | 11 ✔ | 12.1+ ✔ | 5.1+ ✔ | 12+ ✔ |
 ## Credits
 * [Joey Yakimowich-Payne](https://www.iconfinder.com/jyapayne) (Sun icon)
 ## License
