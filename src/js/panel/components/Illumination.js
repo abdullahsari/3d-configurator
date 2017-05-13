@@ -2,6 +2,10 @@ import Config from '../../Configurator';
 
 const BTN_CLASS = 'segment',
     ACTIVE_CLASS = 'orientation';
+
+/**
+ * Handles the lighting directions within the scene
+ */
 export default class Illumination {
     constructor() {
         this.directions = document.getElementsByClassName(BTN_CLASS);
@@ -9,6 +13,9 @@ export default class Illumination {
         this.bindEvents();
     }
 
+    /**
+     * Attach events to the UI control
+     */
     bindEvents() {
 
         // add event listeners
@@ -19,6 +26,10 @@ export default class Illumination {
         }
     }
 
+    /**
+     * Changes the direction of the lighting according to the cardinal direction
+     * @param node The chosen direction's button
+     */
     changeLightOrientation(node) {
 
         // remove previous active orientation
