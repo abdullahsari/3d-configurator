@@ -28,7 +28,7 @@ class Configurator {
         const canvas = document.getElementById('renderContext');
 
         // define cameras
-        const arc = new BABYLON.ArcRotateCamera('arc', 1, 0.8, 10, new BABYLON.Vector3.Zero(), Scene),
+        const arc = new BABYLON.ArcRotateCamera('arc', Math.PI, Math.PI / 2, CAMERA_LIMITS.UPPER_RADIUS, new BABYLON.Vector3.Zero(), Scene),
             free = new BABYLON.FreeCamera('free', new BABYLON.Vector3(0, 2, 50), Scene);
 
         // rotation-camera settings
