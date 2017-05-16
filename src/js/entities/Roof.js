@@ -1,5 +1,4 @@
 import Scene from '../core/scene';
-import { ROOF_TYPE } from '../data/constants';
 
 export default class Roof {
     constructor() {

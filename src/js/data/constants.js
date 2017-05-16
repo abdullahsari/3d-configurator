@@ -41,8 +41,3 @@ export const DIRECTIONS = Object.freeze({
     WEST      : 'W',
     NORTH_WEST: 'NW'
 });
-
-// Properties regarding meshes
-export const DEFAULTS = Object.freeze({
-    MESH_HEIGHT: 20
-});
