@@ -1,3 +1,6 @@
+// Debug mode
+export const DEBUG = true;
+
 // Camera
 export const CAMERA_LIMITS = Object.freeze({
     LOWER_RADIUS: 50,
@@ -37,4 +40,9 @@ export const DIRECTIONS = Object.freeze({
     SOUTH_WEST: 'SW',
     WEST      : 'W',
     NORTH_WEST: 'NW'
+});
+
+// Properties regarding meshes
+export const DEFAULTS = Object.freeze({
+    MESH_HEIGHT: 20
 });
