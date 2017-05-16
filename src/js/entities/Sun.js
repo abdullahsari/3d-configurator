@@ -13,6 +13,7 @@ export default class Sun {
         const mesh = BABYLON.Mesh.CreateSphere('sphere', 16, 1, Scene);
         mesh.position.y = 50;
         mesh.material = material;
+        mesh.isPickable = false;
         this.mesh = mesh;
 
         // create actual light source
