@@ -29,6 +29,7 @@ export default class Environment {
         skyMat.diffuseColor = new BABYLON.Color3(0, 0, 0);
         skyMat.specularColor = new BABYLON.Color3(0, 0, 0);
         skyMesh.material = skyMat;
+        skyMesh.isPickable = false;
         this.skybox = skyMesh;
     }
 
@@ -49,6 +50,7 @@ export default class Environment {
         groundMesh.material = groundMat;
         groundMesh.position = new BABYLON.Vector3.Zero();
         groundMesh.checkCollisions = true;
+        groundMesh.isPickable = false;
         this.ground = groundMesh;
     }
 
@@ -98,6 +100,7 @@ export default class Environment {
         // merge individual walls to one unit so it forms a square
         const mesh = BABYLON.Mesh.MergeMeshes(walls);
         mesh.checkCollisions = true;
+        mesh.isPickable = false;
         this.wall = mesh;
     }
 }
