@@ -122,6 +122,24 @@ canvas {
 }
 
 /*************************************************
+ * BUTTONS ***************************************
+ *************************************************/
+
+.btn-primary {
+    padding: 0.25rem 1rem 0.25rem 1rem;
+    border: none;
+    background-color: #008CBA;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    color: white;
+}
+
+.btn-primary:hover {
+    cursor: pointer;
+}
+
+/*************************************************
  * COMPASS ***************************************
  *************************************************/
 
