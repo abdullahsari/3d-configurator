@@ -18,20 +18,24 @@ import { CAMERA_LIMITS, CAMERA_SETTINGS } from './data/constants';
 class Configurator {
     constructor() {
 
-        // defaults
-        this.entities = new Map();
+        // Grab the canvas
+        this.canvas = document.getElementById('renderContext');
 
-        // initialize 3D world
+        // Defaults
+        this.entities = new Map();
+        this.selected = null;
+
+        // Initialize 3D world
         this.initWorld();
+
+        // Start the picking system
+        this.initPicking();
     }
 
     /**
      * Initializes the world/scene with everything that is needed
      */
     initWorld() {
-
-        // Grab the canvas
-        const canvas = document.getElementById('renderContext');
 
         // Define cameras
         const arc = new BABYLON.ArcRotateCamera('arc', Math.PI, Math.PI / 2, CAMERA_LIMITS.UPPER_RADIUS, new BABYLON.Vector3.Zero(), Scene),
@@ -41,10 +45,10 @@ class Configurator {
         arc.lowerRadiusLimit = CAMERA_LIMITS.LOWER_RADIUS;
         arc.upperRadiusLimit = CAMERA_LIMITS.UPPER_RADIUS;
         arc.upperBetaLimit = CAMERA_LIMITS.UPPER_BETA;
-        arc.attachControl(canvas);
+        arc.attachControl(this.canvas);
 
         // Freecamera settings
-        free.attachControl(canvas);
+        free.attachControl(this.canvas);
         free.applyGravity = true;
         free.checkCollisions = true;
         free.keysUp.push(CAMERA_SETTINGS.KEYS_UP);
@@ -55,6 +59,7 @@ class Configurator {
         free.inertia = CAMERA_SETTINGS.INERTIA;
         free.angularSensibility = CAMERA_SETTINGS.NG_SENSIBILITY;
 
+        // Save cameras in one object
         this.cameras = {arc, free};
 
         // Deploy sun in the sky
@@ -62,6 +67,29 @@ class Configurator {
 
         // Generate environment
         this.environment = new Environment();
+    }
+
+    /**
+     * Initializes the picking system in the scene
+     */
+    initPicking() {
+        this.canvas.addEventListener('click', () => {
+            const result = Scene.pick(Scene.pointerX, Scene.pointerY);
+            if (result.hit) {
+                if (this.selected) {
+                    this.entities.get(this.selected).mesh.material.wireframe = false;
+                    this.selected = null;
+                } else {
+                    this.selected = result.pickedMesh.toString().split(' ')[1].slice(0, -1);
+                    result.pickedMesh.material.wireframe = true;
+                }
+            } else {
+                if (this.selected) {
+                    this.entities.get(this.selected).mesh.material.wireframe = false;
+                    this.selected = null;
+                }
+            }
+        });
     }
 
     /**
@@ -86,6 +114,10 @@ class Configurator {
     addRoof() {
         const name = `roof-${this.entities.size}`;
         this.entities.set(name, new Roof(name));
+    }
+
+    changeMaterial(material) {
+        
     }
 
     /**
