@@ -9,9 +9,6 @@ import Pole from './entities/Pole';
 import Wall from './entities/Wall';
 import Roof from './entities/Roof';
 
-// Editors
-import MaterialEditor from './editors/MaterialEditor';
-
 // Constants
 import { CAMERA_LIMITS, CAMERA_SETTINGS } from './data/constants';
 
