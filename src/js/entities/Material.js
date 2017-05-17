@@ -5,7 +5,7 @@ const URL = {
     wood : `${TEXTURES_DIR}/wood/tilewood.jpg`,
     black: `${TEXTURES_DIR}/wood/black.jpg`
 };
-export default class MaterialEditor {
+export default class Material {
     constructor() {
         const mats = new Map();
         mats.set('glass', this.glass());
@@ -14,12 +14,21 @@ export default class MaterialEditor {
         this.materials = mats;
     }
 
+    /**
+     * Returns the requested material
+     * @param name The material name
+     * @returns {V} Material
+     */
     getMaterial(name) {
         const material = this.materials.get(name);
         if (!material) throw new Error('Invalid material key.');
         return material;
     }
 
+    /**
+     * Generates a glass material
+     * @returns {BABYLON.StandardMaterial}
+     */
     glass() {
         const mat = new BABYLON.StandardMaterial('glass', Scene);
         mat.alpha = 0.6;
@@ -42,6 +51,10 @@ export default class MaterialEditor {
         return mat;
     }
 
+    /**
+     * Generates a wood material
+     * @returns {BABYLON.StandardMaterial}
+     */
     wood() {
         const mat = new BABYLON.StandardMaterial('wood', Scene);
         mat.alpha = 1;
@@ -70,6 +83,10 @@ export default class MaterialEditor {
         return mat;
     }
 
+    /**
+     * Generates a black material
+     * @returns {BABYLON.StandardMaterial}
+     */
     black() {
         const mat = new BABYLON.StandardMaterial('wood', Scene);
         mat.alpha = 1;
