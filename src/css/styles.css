@@ -70,6 +70,7 @@ canvas {
 
 .btn {
     background-color: #EEE;
+    background-repeat: no-repeat;
     background-position: center;
     position: absolute;
     width: 5rem;
@@ -101,13 +102,23 @@ canvas {
     z-index: 999;
 }
 
+#insert {
+    top: 15.2rem;
+    z-index: 998;
+}
+
 /* Individual Buttons */
+
 #lighting .btn {
     background-image: url(../img/icons/sun.png);
 }
 
 #camera .btn {
     background-image: url(../img/icons/cam.png);
+}
+
+#insert .btn {
+    background-image: url(../img/icons/plus.png);
 }
 
 /*************************************************
