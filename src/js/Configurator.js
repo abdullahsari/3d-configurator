@@ -68,8 +68,6 @@ class Configurator {
 
         // generate environment
         this.environment = new Environment();
-
-        this.addPole();
     }
 
     /**
