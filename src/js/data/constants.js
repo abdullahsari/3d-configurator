@@ -41,3 +41,10 @@ export const DIRECTIONS = Object.freeze({
     WEST      : 'W',
     NORTH_WEST: 'NW'
 });
+
+// Mesh types
+export const MESH_TYPES = Object.freeze({
+    WALL: 'WALL',
+    POLE: 'POLE',
+    ROOF: 'ROOF'
+});
