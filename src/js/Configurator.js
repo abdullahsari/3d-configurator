@@ -5,6 +5,12 @@ import Scene from './core/scene';
 // Entities
 import Environment from './entities/Environment';
 import Sun from './entities/Sun';
+import Pole from './entities/Pole';
+import Wall from './entities/Wall';
+import Roof from './entities/Roof';
+
+// Editors
+import MaterialEditor from './editors/MaterialEditor';
 
 // Constants
 import { CAMERA_LIMITS, CAMERA_SETTINGS } from './data/constants';
@@ -14,6 +20,12 @@ import { CAMERA_LIMITS, CAMERA_SETTINGS } from './data/constants';
  */
 class Configurator {
     constructor() {
+
+        // defaults
+        this.entities = new Map();
+
+        // editors
+        this.matEditor = new MaterialEditor();
 
         // initialize 3D world
         this.initWorld();
@@ -56,6 +68,32 @@ class Configurator {
 
         // generate environment
         this.environment = new Environment();
+
+        this.addPole();
+    }
+
+    /**
+     * Adds a pole structure to the scene at the origin
+     */
+    addPole() {
+        const name = `pole-${this.entities.size}`;
+        this.entities.set(name, new Pole(name));
+    }
+
+    /**
+     * Adds a wall structure to the scene at the origin
+     */
+    addWall() {
+        const name = `wall-${this.entities.size}`;
+        this.entities.set(name, new Wall(name));
+    }
+
+    /**
+     * Adds a roof structure to the scene at the origin
+     */
+    addRoof() {
+        const name = `roof-${this.entities.size}`;
+        this.entities.set(name, new Roof(name));
     }
 
     /**
