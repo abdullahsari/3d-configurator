@@ -36,5 +36,6 @@ e.g.:
 ## Credits
 * [Joey Yakimowich-Payne](https://www.iconfinder.com/jyapayne) (Sun icon)
 * [Romualdas Jurgaitis](https://www.iconfinder.com/Sakagami) (Cam icon)
+* [Designmodo](https://www.iconfinder.com/designmodo) (Plus icon)
 ## License
 [MIT](https://opensource.org/licenses/MIT)
