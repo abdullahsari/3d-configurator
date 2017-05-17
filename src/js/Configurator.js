@@ -5,6 +5,9 @@ import Scene from './core/scene';
 // Entities
 import Environment from './entities/Environment';
 import Sun from './entities/Sun';
+import Pole from './entities/Pole';
+import Wall from './entities/Wall';
+import Roof from './entities/Roof';
 
 // Constants
 import { CAMERA_LIMITS, CAMERA_SETTINGS } from './data/constants';
@@ -15,6 +18,9 @@ import { CAMERA_LIMITS, CAMERA_SETTINGS } from './data/constants';
 class Configurator {
     constructor() {
 
+        // defaults
+        this.entities = new Map();
+
         // initialize 3D world
         this.initWorld();
     }
@@ -24,20 +30,20 @@ class Configurator {
      */
     initWorld() {
 
-        // grab the canvas
+        // Grab the canvas
         const canvas = document.getElementById('renderContext');
 
-        // define cameras
+        // Define cameras
         const arc = new BABYLON.ArcRotateCamera('arc', Math.PI, Math.PI / 2, CAMERA_LIMITS.UPPER_RADIUS, new BABYLON.Vector3.Zero(), Scene),
             free = new BABYLON.FreeCamera('free', new BABYLON.Vector3(0, 2, 50), Scene);
 
-        // rotation-camera settings
+        // Rotation-camera settings
         arc.lowerRadiusLimit = CAMERA_LIMITS.LOWER_RADIUS;
         arc.upperRadiusLimit = CAMERA_LIMITS.UPPER_RADIUS;
         arc.upperBetaLimit = CAMERA_LIMITS.UPPER_BETA;
         arc.attachControl(canvas);
 
-        // freecamera settings
+        // Freecamera settings
         free.attachControl(canvas);
         free.applyGravity = true;
         free.checkCollisions = true;
@@ -51,11 +57,35 @@ class Configurator {
 
         this.cameras = {arc, free};
 
-        // deploy sun in the sky
+        // Deploy sun in the sky
         this.sun = new Sun();
 
-        // generate environment
+        // Generate environment
         this.environment = new Environment();
+    }
+
+    /**
+     * Adds a pole structure to the scene at the origin
+     */
+    addPole() {
+        const name = `pole-${this.entities.size}`;
+        this.entities.set(name, new Pole(name));
+    }
+
+    /**
+     * Adds a wall structure to the scene at the origin
+     */
+    addWall() {
+        const name = `wall-${this.entities.size}`;
+        this.entities.set(name, new Wall(name));
+    }
+
+    /**
+     * Adds a roof structure to the scene at the origin
+     */
+    addRoof() {
+        const name = `roof-${this.entities.size}`;
+        this.entities.set(name, new Roof(name));
     }
 
     /**
