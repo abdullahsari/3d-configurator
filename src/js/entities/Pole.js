@@ -1,5 +1,5 @@
 import Scene from '../core/scene';
-import { DEFAULTS } from '../data/constants'
+import { MESH_OUTLINE_WIDTH } from '../data/constants'
 
 /**
  * This class represents a pole structure
