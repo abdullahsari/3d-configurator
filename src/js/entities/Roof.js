@@ -8,7 +8,7 @@ const DEFAULT_Y = 10;
  */
 export default class Roof {
     constructor(name = 'roof') {
-        const mesh = BABYLON.MeshBuilder.CreateBox(name, {width: 10, height: 0.25, depth: 15}, Scene);
+        const mesh = BABYLON.MeshBuilder.CreateBox(name, {width: 10, height: 0.5, depth: 15}, Scene);
         mesh.material = new BABYLON.StandardMaterial('roofMat', Scene);
         mesh.position.y = DEFAULT_Y;
 
