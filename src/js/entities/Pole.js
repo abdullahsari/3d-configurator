@@ -5,9 +5,10 @@ import { MESH_OUTLINE_WIDTH } from '../data/constants'
  * This class represents a pole structure
  */
 export default class Pole {
-    constructor(name = 'pole', height = 15) {
+    constructor(name = 'pole', height = 10) {
         const mesh = BABYLON.MeshBuilder.CreateBox(name, {width: 0.5, height, depth: 0.5}, Scene);
         mesh.material = new BABYLON.StandardMaterial('roofMat', Scene);
+        mesh.position.y = height / 2;   
         mesh.checkCollisions = true;
 
         // Handle events when mouse moves over the mesh
