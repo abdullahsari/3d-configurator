@@ -89,11 +89,20 @@
             <div class="btn"></div>
             <div class="content">
                 <p>No object selected</p>
-                <div>
+                <div class="hide">
                     <h3>Edit mesh</h3>
+                    <button id="remove" type="button" class="btn-primary">Remove</button>
+                    <button id="rotate" type="button" class="btn-primary">Rotate 90&deg;</button>
+                    <h4>Translate</h4>
+                    <span id="minX" class="clickable">&laquo;</span>X<span id="plusX" class="clickable">&raquo;</span>
+                    <span id="minY" class="clickable">&laquo;</span>Y<span id="plusY" class="clickable">&raquo;</span>
+                    <span id="minZ" class="clickable">&laquo;</span>Z<span id="plusZ" class="clickable">&raquo;</span>
+                    <h4>Scale</h4>
+                    <span id="sminX" class="clickable">&ndash;</span>X<span id="splusX" class="clickable">+</span>
+                    <span id="sminY" class="clickable">&ndash;</span>Y<span id="splusY" class="clickable">+</span>
+                    <span id="sminZ" class="clickable">&ndash;</span>Z<span id="splusZ" class="clickable">+</span>
                     <hr />
                     <h3>Edit material</h3>
-                    <hr />
                     <button id="black" type="button" class="btn-primary">Black</button>
                     <button id="wood" type="button" class="btn-primary">Wood</button>
                     <button id="glass" type="button" class="btn-primary">Glass</button>
