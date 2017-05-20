@@ -23,6 +23,7 @@ export const GRAVITATIONAL_ACCELERATION = 9.81;
 
 // Directories
 export const TEXTURES_DIR = 'img/textures/';
+export const SOUNDS_DIR = 'sound/';
 
 // Ground
 export const GROUND = Object.freeze({
