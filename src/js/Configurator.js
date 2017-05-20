@@ -11,7 +11,7 @@ import Roof from './entities/Roof';
 import Material from './entities/Material';
 
 // Constants
-import { CAMERA_LIMITS, CAMERA_SETTINGS, STEP_AMOUNT } from './data/constants';
+import { CAMERA_LIMITS, CAMERA_SETTINGS, STEP_AMOUNT, SCALE_AMOUNT} from './data/constants';
 
 /**
  * This class is the core of the application.
@@ -178,12 +178,14 @@ class Configurator {
                 mesh.translate(BABYLON.Axis.X, (positive ? STEP_AMOUNT : -STEP_AMOUNT), BABYLON.Space.WORLD);
                 break;
             case 'Y':
+                if (!positive && mesh.intersectsMesh(this.environment.ground, false)) throw new Error('Stay above the ground.');
                 mesh.translate(BABYLON.Axis.Y, (positive ? STEP_AMOUNT : -STEP_AMOUNT), BABYLON.Space.WORLD);
                 break;
             case 'Z':
                 mesh.translate(BABYLON.Axis.Z, (positive ? STEP_AMOUNT : -STEP_AMOUNT), BABYLON.Space.WORLD);
                 break;
         }
+        mesh.bakeCurrentTransformIntoVertices();
     }
 
     /**
@@ -193,7 +195,7 @@ class Configurator {
      */
     scaleMesh(axis, positive) {
         const mesh = this.entities.get(this.selected).mesh;
-        const amount = (positive ? STEP_AMOUNT : -STEP_AMOUNT);
+        const amount = (positive ? SCALE_AMOUNT : -SCALE_AMOUNT);
         switch (axis.toUpperCase()) {
             case 'X':
                 mesh.scaling.x += amount;
