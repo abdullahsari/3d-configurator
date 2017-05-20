@@ -41,3 +41,16 @@ export const DIRECTIONS = Object.freeze({
     WEST      : 'W',
     NORTH_WEST: 'NW'
 });
+
+// Mesh related
+export const MESH_TYPES = Object.freeze({
+    WALL: 'WALL',
+    POLE: 'POLE',
+    ROOF: 'ROOF'
+});
+
+export const MESH_OUTLINE_WIDTH = 0.05;
+
+export const STEP_AMOUNT = 0.25;
+
+export const SCALE_AMOUNT = 0.05;

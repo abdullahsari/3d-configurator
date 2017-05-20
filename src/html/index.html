@@ -11,14 +11,20 @@
 </head>
 <body>
 
+    <!-- Header -->
+    <header>
+        <h1 class="structural">ES6 based client-side 3D configurator</h1>
+    </header>
+
     <!-- Control Panels -->
-    <div id="controls">
+    <section id="controls">
+        <h2 class="structural">Control Panel</h2>
 
         <!-- Illumination -->
         <div id="lighting" class="panel">
             <div class="btn"></div>
             <div class="content">
-                <p>Illumination</p>
+                <h3>Illumination</h3>
                 <div class="squarewrapper">
                     <div class="square">
                         <div class="circle">
@@ -56,14 +62,54 @@
         <div id="camera" class="panel">
             <div class="btn"></div>
             <div class="content">
-                <p>Camera mode</p>
+                <h3>Camera mode</h3>
                 <select>
                     <option value="arc">Rotation</option>
                     <option value="free">First Person</option>
                 </select>
             </div>
         </div>
-    </div>
+
+        <!-- Mesh Inserting -->
+        <div id="insert" class="panel">
+            <div class="btn"></div>
+            <div class="content">
+                <h3>Add an object</h3>
+                <select>
+                    <option value="pole">Pole</option>
+                    <option value="wall">Wall</option>
+                    <option value="roof">Roof</option>
+                </select>
+                <button type="button" class="btn-primary">Insert</button>
+            </div>
+        </div>
+
+        <!-- Editor -->
+        <div id="editor" class="panel">
+            <div class="btn"></div>
+            <div class="content">
+                <p>No object selected</p>
+                <div class="hide">
+                    <h3>Edit mesh</h3>
+                    <button id="remove" type="button" class="btn-primary">Remove</button>
+                    <button id="rotate" type="button" class="btn-primary">Rotate 90&deg;</button>
+                    <h4>Translate</h4>
+                    <span id="minX" class="clickable">&laquo;</span>X<span id="plusX" class="clickable">&raquo;</span>
+                    <span id="minY" class="clickable">&laquo;</span>Y<span id="plusY" class="clickable">&raquo;</span>
+                    <span id="minZ" class="clickable">&laquo;</span>Z<span id="plusZ" class="clickable">&raquo;</span>
+                    <h4>Scale</h4>
+                    <span id="sminX" class="clickable">&ndash;</span>X<span id="splusX" class="clickable">+</span>
+                    <span id="sminY" class="clickable">&ndash;</span>Y<span id="splusY" class="clickable">+</span>
+                    <span id="sminZ" class="clickable">&ndash;</span>Z<span id="splusZ" class="clickable">+</span>
+                    <hr />
+                    <h3>Edit material</h3>
+                    <button id="black" type="button" class="btn-primary">Black</button>
+                    <button id="wood" type="button" class="btn-primary">Wood</button>
+                    <button id="glass" type="button" class="btn-primary">Glass</button>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- 3D World -->
     <canvas id="renderContext"></canvas>

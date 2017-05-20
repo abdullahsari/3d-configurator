@@ -16,7 +16,52 @@ html, body {
 }
 
 body {
-    font-size: 10rem;
+    font-size: 12rem;
+}
+
+p {
+    margin: 0;
+}
+
+/*************************************************
+ * GENERAL ***************************************
+ *************************************************/
+
+.hide {
+    display: none;
+}
+
+.structural {
+    position: absolute;
+    left: 9999px;
+}
+
+h1, h2, h3 {
+    margin-top: 0;
+    font-size: 1.6rem;
+}
+
+h4, h5, h6 {
+    font-size: 1.2rem;
+    margin: 1rem 0 0 0;
+}
+
+span {
+    font-size: 2.5rem;
+}
+
+.clickable {
+    color: #008CBA;
+    text-decoration: underline;
+}
+
+.clickable:hover {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.enlarge {
+    font-size: 2rem;
 }
 
 /*************************************************
@@ -48,6 +93,7 @@ canvas {
     -ms-transform: translateX(27rem);
     -o-transform: translateX(27rem);
     transform: translateX(27rem);
+    user-select: none;
 }
 
 .open {
@@ -64,12 +110,17 @@ canvas {
     padding: 1rem;
 }
 
+.content p {
+    font-size: 1.2rem;
+}
+
 .content > p:first-of-type {
     margin-top: 0;
 }
 
 .btn {
     background-color: #EEE;
+    background-repeat: no-repeat;
     background-position: center;
     position: absolute;
     width: 5rem;
@@ -93,21 +144,58 @@ canvas {
 /* Individual Panels */
 #lighting {
     top: 5rem;
-    z-index: 1000;
+    z-index: 100;
 }
 
 #camera {
     top: 10.1rem;
-    z-index: 999;
+    z-index: 99;
+}
+
+#insert {
+    top: 15.2rem;
+    z-index: 98;
+}
+
+#editor {
+    top: 20.3rem;
+    z-index: 97;
 }
 
 /* Individual Buttons */
+
 #lighting .btn {
     background-image: url(../img/icons/sun.png);
 }
 
 #camera .btn {
     background-image: url(../img/icons/cam.png);
+}
+
+#insert .btn {
+    background-image: url(../img/icons/plus.png);
+}
+
+#editor .btn {
+    background-image: url(../img/icons/edit.png);
+}
+
+/*************************************************
+ * BUTTONS ***************************************
+ *************************************************/
+
+.btn-primary {
+    padding: 0.25rem 1rem 0.25rem 1rem;
+    border: none;
+    background-color: #008CBA;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    color: white;
+}
+
+.btn-primary:hover {
+    cursor: pointer;
 }
 
 /*************************************************
