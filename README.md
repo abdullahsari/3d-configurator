@@ -38,5 +38,6 @@ e.g.:
 * [Romualdas Jurgaitis](https://www.iconfinder.com/Sakagami) (Cam icon)
 * [Designmodo](https://www.iconfinder.com/designmodo) (Plus icon)
 * [Stephen Hutchings](http://typicons.com/) (Edit icon)
+* [Tango](http://tango.freedesktop.org/) (Error icon)
 ## License
 [MIT](https://opensource.org/licenses/MIT)
