@@ -25,7 +25,7 @@ export default class MeshInsert {
                 Config.addRoof();
                 break;
             default:
-                throw new Error('Invalid mesh type.');
+                Utils.displayError('Invalid mesh type.');
                 break;
         }
     }

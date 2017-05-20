@@ -199,6 +199,31 @@ canvas {
 }
 
 /*************************************************
+ * ERROR *****************************************
+ *************************************************/
+
+.error {
+    position: absolute;
+    top: 1rem;
+    width: 20rem;
+    left: 50%;
+    margin-left: -10rem;
+    border: 1px solid;
+    margin-top: 1rem;
+    padding: 1.5rem 1rem 1.5rem 5rem;
+    background-repeat: no-repeat;
+    background-position: 1rem center;
+    color: #D8000C;
+    background-color: #FFBABA;
+    background-image: url(../img/icons/error.png);
+}
+
+.error > p {
+    margin-left: 5rem;
+    font-size: 1.4rem;
+}
+
+/*************************************************
  * COMPASS ***************************************
  *************************************************/
 
