@@ -89,6 +89,10 @@ module.exports = {
             {
                 from: 'src/css',
                 to  : 'css/'
+            },
+            {
+                from: 'src/sound',
+                to  : 'sound/'
             }
         ]),
         new webpack.ProvidePlugin({
