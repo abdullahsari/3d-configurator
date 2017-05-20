@@ -2,6 +2,7 @@ import Illumination from './components/Illumination';
 import Camera from './components/Camera';
 import MeshInsert from './components/MeshInsert';
 import Editor from './components/Editor';
+import Settings from './components/Settings';
 
 const BTN_CLASS = 'btn',
     ACTIVE_CLASS = 'open';
@@ -17,6 +18,7 @@ export default class Panel {
         this.camera = new Camera();
         this.insert = new MeshInsert();
         this.editor = new Editor();
+        this.settings = new Settings();
     }
 
     /**

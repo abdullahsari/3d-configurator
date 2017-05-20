@@ -162,6 +162,11 @@ canvas {
     z-index: 97;
 }
 
+#settings {
+    top: 25.4rem;
+    z-index: 96;
+}
+
 /* Individual Buttons */
 
 #lighting .btn {
@@ -180,6 +185,10 @@ canvas {
     background-image: url(../img/icons/edit.png);
 }
 
+#settings .btn {
+    background-image: url(../img/icons/cog.png);
+}
+
 /*************************************************
  * BUTTONS ***************************************
  *************************************************/
@@ -196,6 +205,62 @@ canvas {
 
 .btn-primary:hover {
     cursor: pointer;
+}
+
+/*************************************************
+ * TOGGLE SWITCH *********************************
+ *************************************************/
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 6rem;
+    height: 2.6rem;
+    margin-top: 1rem;
+}
+
+.switch input {
+    display: none;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 34px;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 1.8rem;
+    width: 1.8rem;
+    left: 0.4rem;
+    bottom: 0.4rem;
+    border-radius: 50%;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked + .slider {
+    background-color: #008CBA;
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px #008CBA;
+}
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(3.4rem);
+    -ms-transform: translateX(3.4rem);
+    transform: translateX(3.4rem);
 }
 
 /*************************************************

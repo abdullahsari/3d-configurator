@@ -39,6 +39,7 @@ e.g.:
 * [Designmodo](https://www.iconfinder.com/designmodo) (Plus icon)
 * [Stephen Hutchings](http://typicons.com/) (Edit icon)
 * [Tango](http://tango.freedesktop.org/) (Error icon)
+* [Paomedia](https://www.iconfinder.com/paomedia) (Cog icon)
 * [Sound Jay](https://www.soundjay.com/) (Sounds)
 ## License
 [MIT](https://opensource.org/licenses/MIT)

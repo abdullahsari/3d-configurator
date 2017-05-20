@@ -1,6 +1,3 @@
-// Debug mode
-export const DEBUG = true;
-
 // Camera
 export const CAMERA_LIMITS = Object.freeze({
     LOWER_RADIUS: 50,
