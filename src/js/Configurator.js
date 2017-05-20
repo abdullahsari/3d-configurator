@@ -163,6 +163,7 @@ class Configurator {
     rotateMesh() {
         const mesh = this.entities.get(this.selected).mesh;
         mesh.rotate(BABYLON.Axis.Y, Utils.degreesToRadians(90), BABYLON.Space.LOCAL);
+        mesh.bakeCurrentTransformIntoVertices();
     }
 
     /**
@@ -199,12 +200,12 @@ class Configurator {
                 break;
             case 'Y':
                 mesh.scaling.y += amount;
-                mesh.position.y += amount;
                 break;
             case 'Z':
                 mesh.scaling.z += amount;
                 break;
         }
+        mesh.bakeCurrentTransformIntoVertices();
     }
 
     /**
