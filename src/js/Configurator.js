@@ -29,8 +29,7 @@ class Configurator {
 
         // Settings
         this.settings = {
-            mute: false,
-            axes: true
+            mute: false
         };
 
         // Load sounds
@@ -41,6 +40,9 @@ class Configurator {
             select : new BABYLON.Sound('select', `${SOUNDS_DIR}select.wav`, Scene),
             dismiss: new BABYLON.Sound('dismiss', `${SOUNDS_DIR}dismiss.wav`, Scene)
         };
+
+        // Axes
+        this.createAxes();
 
         // Initialize 3D world
         this.initWorld();
@@ -102,7 +104,7 @@ class Configurator {
                     this.selected = null;
                     this.hideSections(true);
                 } else {
-                    select.play();
+                    if (!this.settings.mute) select.play();
                     this.selected = result.pickedMesh.toString().split(' ')[1].slice(0, -1);
                     result.pickedMesh.material.wireframe = true;
                     this.hideSections(false);
@@ -134,6 +136,7 @@ class Configurator {
             useSecondStep = false;
         };
         Scene.registerBeforeRender(() => {
+            if (this.settings.mute) return;
 
             // only play footstep sounds with free camera
             if (Scene.activeCamera !== this.cameras.free) return;
@@ -167,6 +170,20 @@ class Configurator {
                 walking = false;
             }
         });
+    }
+
+    createAxes() {
+        const length = 150;
+        const axisX = BABYLON.MeshBuilder.CreateLines('x', {points: [new BABYLON.Vector3.Zero(), new BABYLON.Vector3(length, 0, 0)]}, Scene);
+        axisX.color = new BABYLON.Color3(1, 0, 0);
+        axisX.isPickable = false;
+        const axisY = BABYLON.MeshBuilder.CreateLines('y', {points: [new BABYLON.Vector3.Zero(), new BABYLON.Vector3(0, length, 0)]}, Scene);
+        axisY.color = new BABYLON.Color3(0, 1, 0);
+        axisY.isPickable = false;
+        const axisZ = BABYLON.MeshBuilder.CreateLines('z', {points: [new BABYLON.Vector3.Zero(), new BABYLON.Vector3(0, 0, length)]}, Scene);
+        axisZ.color = new BABYLON.Color3(0, 0, 1);
+        axisZ.isPickable = false;
+        this.axes = [axisX, axisY, axisZ];
     }
 
     /**
@@ -225,7 +242,7 @@ class Configurator {
 
         // Play removal sound
         const {dismiss} = this.sounds;
-        dismiss.play();
+        if (!this.settings.mute) dismiss.play();
 
         // Remove the mesh
         const mesh = this.entities.get(this.selected).mesh;
