@@ -55,7 +55,11 @@ export default class Editor {
      * @param mat The material name
      */
     newMaterial(mat) {
-        Config.changeMaterial(mat);
+        try {
+            Config.changeMaterial(mat);
+        } catch (err) {
+            Utils.displayError(err.message);
+        }
     }
 
     /**
@@ -87,6 +91,10 @@ export default class Editor {
      * @param positive Translate in positive or negative direction (true/false)
      */
     translate(axis, positive) {
-        Config.translateMesh(axis, positive);
+        try {
+            Config.translateMesh(axis, positive);
+        } catch (err) {
+            Utils.displayError(err.message);
+        }
     }
 }
