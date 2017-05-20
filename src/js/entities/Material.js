@@ -8,9 +8,9 @@ const URL = {
 export default class Material {
     constructor() {
         const mats = new Map();
-        mats.set('glass', this.glass());
-        mats.set('wood', this.wood());
-        mats.set('black', this.black());
+        mats.set('glass', this.glass);
+        mats.set('wood', this.wood);
+        mats.set('black', this.black);
         this.materials = mats;
     }
 
@@ -22,7 +22,7 @@ export default class Material {
     getMaterial(name) {
         const material = this.materials.get(name);
         if (!material) throw new Error('Invalid material key.');
-        return material;
+        return material();
     }
 
     /**
