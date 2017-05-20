@@ -51,4 +51,6 @@ export const MESH_TYPES = Object.freeze({
 
 export const MESH_OUTLINE_WIDTH = 0.05;
 
-export const STEP_AMOUNT = 0.5;
+export const STEP_AMOUNT = 0.25;
+
+export const SCALE_AMOUNT = 0.05;
