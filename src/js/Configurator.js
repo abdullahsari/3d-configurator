@@ -27,6 +27,15 @@ class Configurator {
         this.selected = null;
         this.material = new Material();
 
+        // Load sounds
+        this.sounds = {
+            step1  : new BABYLON.Sound('step1', `${SOUNDS_DIR}step1.wav`, Scene),
+            step2  : new BABYLON.Sound('step2', `${SOUNDS_DIR}step2.wav`, Scene),
+            step3  : new BABYLON.Sound('step3', `${SOUNDS_DIR}step3.wav`, Scene),
+            select : new BABYLON.Sound('select', `${SOUNDS_DIR}select.wav`, Scene),
+            dismiss: new BABYLON.Sound('dismiss', `${SOUNDS_DIR}dismiss.wav`, Scene)
+        };
+
         // Initialize 3D world
         this.initWorld();
 
@@ -78,6 +87,7 @@ class Configurator {
      * Initializes the picking system in the scene
      */
     initPicking() {
+        const { select } = this.sounds;
         this.canvas.addEventListener('click', () => {
             const result = Scene.pick(Scene.pointerX, Scene.pointerY);
             if (result.hit) {
@@ -86,6 +96,7 @@ class Configurator {
                     this.selected = null;
                     this.hideSections(true);
                 } else {
+                    select.play();
                     this.selected = result.pickedMesh.toString().split(' ')[1].slice(0, -1);
                     result.pickedMesh.material.wireframe = true;
                     this.hideSections(false);
@@ -104,9 +115,7 @@ class Configurator {
      * Initializes various effects such as sound
      */
     initFx() {
-        const step1 = new BABYLON.Sound('step1', `${SOUNDS_DIR}step1.wav`, Scene),
-            step2 = new BABYLON.Sound('step2', `${SOUNDS_DIR}step2.wav`, Scene),
-            step3 = new BABYLON.Sound('step3', `${SOUNDS_DIR}step3.wav`, Scene);
+        const { step1, step2, step3 } = this.sounds;
         let useSecondStep = false,
             walking = false;
         step1.onended = () => {
@@ -207,6 +216,12 @@ class Configurator {
      * Removes the selected mesh
      */
     removeMesh() {
+
+        // Play removal sound
+        const { dismiss } = this.sounds;
+        dismiss.play();
+
+        // Remove the mesh
         const mesh = this.entities.get(this.selected).mesh;
         this.entities.delete(this.selected);
         mesh.dispose();
