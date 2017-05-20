@@ -11,7 +11,7 @@ import Roof from './entities/Roof';
 import Material from './entities/Material';
 
 // Constants
-import { CAMERA_LIMITS, CAMERA_SETTINGS, STEP_AMOUNT, SCALE_AMOUNT} from './data/constants';
+import { CAMERA_LIMITS, CAMERA_SETTINGS, STEP_AMOUNT, SCALE_AMOUNT, SOUNDS_DIR } from './data/constants';
 
 /**
  * This class is the core of the application.
@@ -32,6 +32,9 @@ class Configurator {
 
         // Start the picking system
         this.initPicking();
+
+        // Starts effects
+        this.initFx();
     }
 
     /**
@@ -93,6 +96,60 @@ class Configurator {
                     this.selected = null;
                     this.hideSections(true);
                 }
+            }
+        });
+    }
+
+    /**
+     * Initializes various effects such as sound
+     */
+    initFx() {
+        const step1 = new BABYLON.Sound('step1', `${SOUNDS_DIR}step1.wav`, Scene),
+            step2 = new BABYLON.Sound('step2', `${SOUNDS_DIR}step2.wav`, Scene),
+            step3 = new BABYLON.Sound('step3', `${SOUNDS_DIR}step3.wav`, Scene);
+        let useSecondStep = false,
+            walking = false;
+        step1.onended = () => {
+            useSecondStep = true;
+        };
+        step2.onended = () => {
+            useSecondStep = false;
+        };
+        step3.onended = () => {
+            useSecondStep = false;
+        };
+        Scene.registerBeforeRender(() => {
+
+            // only play footstep sounds with free camera
+            if (Scene.activeCamera !== this.cameras.free) return;
+            if (walking) {
+                if (!step1.isPlaying && !step2.isPlaying && !step3.isPlaying) {
+                    if (Math.random() < 0.2) {
+                        step3.play();
+                    } else if (!useSecondStep) {
+                        step1.play();
+                    } else {
+                        step2.play();
+                    }
+                }
+            }
+        });
+        this.canvas.addEventListener('keydown', e => {
+            if ((e.keyCode > 36 && e.keyCode < 41) ||
+                e.keyCode === CAMERA_SETTINGS.KEYS_DOWN ||
+                e.keyCode === CAMERA_SETTINGS.KEYS_UP ||
+                e.keyCode === CAMERA_SETTINGS.KEYS_LEFT ||
+                e.keyCode === CAMERA_SETTINGS.KEYS_RIGHT) {
+                walking = true;
+            }
+        });
+        this.canvas.addEventListener('keyup', e => {
+            if ((e.keyCode > 36 && e.keyCode < 41) ||
+                e.keyCode === CAMERA_SETTINGS.KEYS_DOWN ||
+                e.keyCode === CAMERA_SETTINGS.KEYS_UP ||
+                e.keyCode === CAMERA_SETTINGS.KEYS_LEFT ||
+                e.keyCode === CAMERA_SETTINGS.KEYS_RIGHT) {
+                walking = false;
             }
         });
     }
