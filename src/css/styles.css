@@ -162,6 +162,11 @@ canvas {
     z-index: 97;
 }
 
+#settings {
+    top: 25.4rem;
+    z-index: 96;
+}
+
 /* Individual Buttons */
 
 #lighting .btn {
@@ -178,6 +183,10 @@ canvas {
 
 #editor .btn {
     background-image: url(../img/icons/edit.png);
+}
+
+#settings .btn {
+    background-image: url(../img/icons/cog.png);
 }
 
 /*************************************************
