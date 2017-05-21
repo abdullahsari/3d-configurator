@@ -24,6 +24,9 @@ export default class MeshInsert {
             case MESH_TYPES.ROOF:
                 Config.addRoof();
                 break;
+            case MESH_TYPES.DOOR:
+                Config.addDoor();
+                break;
             default:
                 Utils.displayError('Invalid mesh type.');
                 break;
