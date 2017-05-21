@@ -545,3 +545,31 @@ input:checked + .slider:before {
     background: -ms-linear-gradient(-30deg, darkgreen, limegreen);
     background: linear-gradient(-30deg, darkgreen, limegreen);
 }
+
+/*************************************************
+ * PRELOADER *************************************
+ *************************************************/
+
+#preload {
+    position: absolute;
+    z-index: 999999999;
+    background-color: black;
+    width: 100%;
+    height: 100%;
+    color: white;
+    transition: all 1s;
+}
+
+#preload > div {
+    position: relative;
+    left: 50%;
+    top: 25%;
+    margin-left: -15rem;
+}
+
+#cubes {
+    width: 30rem;
+    height: 30rem;
+    background-image: url(../img/loader/loader.gif);
+    background-repeat: no-repeat;
+}
