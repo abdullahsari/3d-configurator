@@ -91,11 +91,11 @@ export default class Environment {
 
         // third wall
         walls[2].position.x = distance;
-        walls[2].rotation.y = Utils.degreesToRadians(90);
+        walls[2].rotation.y = BABYLON.Tools.ToRadians(90);
 
         // fourth wall
         walls[3].position.x = -distance;
-        walls[3].rotation.y = Utils.degreesToRadians(90);
+        walls[3].rotation.y = BABYLON.Tools.ToRadians(90);
 
         // merge individual walls to one unit so it forms a square
         const mesh = BABYLON.Mesh.MergeMeshes(walls);
