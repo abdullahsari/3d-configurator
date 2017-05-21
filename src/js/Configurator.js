@@ -8,6 +8,7 @@ import Sun from './entities/Sun';
 import Pole from './entities/Pole';
 import Wall from './entities/Wall';
 import Roof from './entities/Roof';
+import Door from './entities/Door';
 import Material from './entities/Material';
 
 // Constants
@@ -224,6 +225,14 @@ class Configurator {
     addRoof() {
         const name = `roof-${this.entities.size}`;
         this.entities.set(name, new Roof(name));
+    }
+
+    /**
+     * Adds a door structure to the scene at the origin
+     */
+    addDoor() {
+        const name = `door-${this.entities.size}`;
+        this.entities.set(name, new Door(name));
     }
 
     /**
