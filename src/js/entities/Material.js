@@ -5,6 +5,10 @@ const URL = {
     wood : `${TEXTURES_DIR}/wood/tilewood.jpg`,
     black: `${TEXTURES_DIR}/wood/black.jpg`
 };
+
+/**
+ * This class generates various materials
+ */
 export default class Material {
     constructor() {
         const mats = new Map();

@@ -18,7 +18,7 @@ export default class Illumination {
      */
     bindEvents() {
 
-        // add event listeners
+        // Add event listeners
         for (let btn of this.directions) {
             btn.addEventListener('click', () => {
                 this.changeLightOrientation(btn);
@@ -32,14 +32,14 @@ export default class Illumination {
      */
     changeLightOrientation(node) {
 
-        // remove previous active orientation
+        // Remove previous active orientation
         this.active.classList.remove(ACTIVE_CLASS);
 
-        // set clicked orientation as active
+        // Set clicked orientation as active
         node.classList.add(ACTIVE_CLASS);
         this.active = node;
 
-        // move sun in the scene
+        // Move sun in the scene
         Config.moveSun(node.dataset.direction);
     }
 }
