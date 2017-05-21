@@ -39,31 +39,31 @@ export default class Sun {
                 this.light.direction = new BABYLON.Vector3(-1, y, 0);
                 break;
             case DIRECTIONS.NORTH_EAST:
-                angle = Utils.degreesToRadians(-45);
+                angle = BABYLON.Tools.ToRadians(-45);
                 this.light.direction = new BABYLON.Vector3(-1, y, 1);
                 break;
             case DIRECTIONS.EAST:
-                angle = Utils.degreesToRadians(-90);
+                angle = BABYLON.Tools.ToRadians(-90);
                 this.light.direction = new BABYLON.Vector3(0, y, 1);
                 break;
             case DIRECTIONS.SOUTH_EAST:
-                angle = Utils.degreesToRadians(-135);
+                angle = BABYLON.Tools.ToRadians(-135);
                 this.light.direction = new BABYLON.Vector3(1, y, 1);
                 break;
             case DIRECTIONS.SOUTH:
-                angle = Utils.degreesToRadians(-180);
+                angle = BABYLON.Tools.ToRadians(-180);
                 this.light.direction = new BABYLON.Vector3(1, y, 0);
                 break;
             case DIRECTIONS.SOUTH_WEST:
-                angle = Utils.degreesToRadians(-225);
+                angle = BABYLON.Tools.ToRadians(-225);
                 this.light.direction = new BABYLON.Vector3(1, y, -1);
                 break;
             case DIRECTIONS.WEST:
-                angle = Utils.degreesToRadians(-270);
+                angle = BABYLON.Tools.ToRadians(-270);
                 this.light.direction = new BABYLON.Vector3(0, y, -1);
                 break;
             case DIRECTIONS.NORTH_WEST:
-                angle = Utils.degreesToRadians(-315);
+                angle = BABYLON.Tools.ToRadians(-315);
                 this.light.direction = new BABYLON.Vector3(-1, y, -1);
                 break;
         }

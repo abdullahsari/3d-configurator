@@ -269,7 +269,7 @@ class Configurator {
      */
     rotateMesh() {
         const mesh = this.entities.get(this.selected).mesh;
-        mesh.rotate(BABYLON.Axis.Y, Utils.degreesToRadians(90), BABYLON.Space.LOCAL);
+        mesh.rotate(BABYLON.Axis.Y, BABYLON.Tools.ToRadians(90), BABYLON.Space.LOCAL);
         mesh.bakeCurrentTransformIntoVertices();
     }
 
