@@ -1,5 +1,8 @@
 import Config from '../../Configurator';
 
+/**
+ * This class represents the mesh editor
+ */
 export default class Editor {
     constructor() {
         this.bindEvents();

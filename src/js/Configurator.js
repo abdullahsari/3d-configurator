@@ -139,7 +139,7 @@ class Configurator {
         Scene.registerBeforeRender(() => {
             if (this.settings.mute) return;
 
-            // only play footstep sounds with free camera
+            // Only play footstep sounds with free camera
             if (Scene.activeCamera !== this.cameras.free) return;
             if (walking) {
                 if (!step1.isPlaying && !step2.isPlaying && !step3.isPlaying) {
@@ -173,6 +173,9 @@ class Configurator {
         });
     }
 
+    /**
+     * Creates axes at the origin of the scene to assist with the directions
+     */
     createAxes() {
         const length = 150;
         const axisX = BABYLON.MeshBuilder.CreateLines('x', {points: [new BABYLON.Vector3.Zero(), new BABYLON.Vector3(length, 0, 0)]}, Scene);
@@ -340,4 +343,5 @@ class Configurator {
     }
 }
 
+// Exports a singleton
 export default new Configurator();

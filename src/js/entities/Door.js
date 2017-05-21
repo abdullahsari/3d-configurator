@@ -272,6 +272,8 @@ export default class Door {
         vertexData.normals = normals;
         vertexData.applyToMesh(mesh);
         mesh.material = new BABYLON.StandardMaterial('doorMat', Scene);
+
+        // Enlarge door
         mesh.position.y = 8;
         mesh.rotate(BABYLON.Axis.X, BABYLON.Tools.ToRadians(90), BABYLON.Space.LOCAL);
         mesh.scaling.x = 4;
