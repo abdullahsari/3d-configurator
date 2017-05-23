@@ -9,7 +9,7 @@ const URL = {
 /**
  * This class generates various materials
  */
-export default class Material {
+export default class MaterialProvider {
     constructor() {
         const mats = new Map();
         mats.set('glass', this.glass);

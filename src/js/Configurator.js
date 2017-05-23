@@ -9,7 +9,7 @@ import Pole from './entities/Pole';
 import Wall from './entities/Wall';
 import Roof from './entities/Roof';
 import Door from './entities/Door';
-import Material from './entities/Material';
+import MaterialProvider from './entities/MaterialProvider';
 
 // Constants
 import { CAMERA_LIMITS, CAMERA_SETTINGS, STEP_AMOUNT, SCALE_AMOUNT, SOUNDS_DIR } from './data/constants';
@@ -26,7 +26,7 @@ class Configurator {
         // Defaults
         this.entities = new Map();
         this.selected = null;
-        this.material = new Material();
+        this.material = new MaterialProvider();
 
         // Settings
         this.settings = {
