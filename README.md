@@ -1,6 +1,6 @@
 3D Configurator
 ===============
-3D configurator is a web application that is powered by the [WebGL API](https://www.khronos.org/webgl/). [BabylonJS](http://www.babylonjs.com/) is the abstraction layer on top of this low level API. This is purely a proof of concept that can be extended to a fully fetched project. The application in its current state only allows the configuration of basic structures with some additional features.
+3D configurator is a web application that is powered by the [WebGL API](https://www.khronos.org/webgl/). [BabylonJS](http://www.babylonjs.com/) is the abstraction layer on top of this low level API. This is purely a proof of concept that can be extended to a full-fledged project. The application in its current state only allows the configuration of basic structures with some additional features.
 ## Setup
 ### Initial steps
 Install these in order:
@@ -23,7 +23,7 @@ Navigate to the project root and run the following command:
 ```shell
 yarn dev    
 ```
-This command will commence webpack-dev-server and host the files in the memory from http://localhost:8080.
+This command will commence webpack-dev-server and host the files in-memory from http://localhost:8080.
 e.g.:
 * http://localhost:8080/js/bundle.js
 * http://localhost:8080/css/styles.css
