@@ -94,6 +94,9 @@ canvas {
     -o-transform: translateX(27rem);
     transform: translateX(27rem);
     user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
 }
 
 .open {
@@ -233,6 +236,9 @@ canvas {
     border-radius: 34px;
     background-color: #ccc;
     -webkit-transition: .4s;
+    -moz-transition: .4s;
+    -ms-transition: .4s;
+    -o-transition: .4s;
     transition: .4s;
 }
 
@@ -246,6 +252,9 @@ canvas {
     border-radius: 50%;
     background-color: white;
     -webkit-transition: .4s;
+    -moz-transition: .4s;
+    -ms-transition: .4s;
+    -o-transition: .4s;
     transition: .4s;
 }
 
@@ -261,6 +270,8 @@ input:checked + .slider:before {
     -webkit-transform: translateX(3.4rem);
     -ms-transform: translateX(3.4rem);
     transform: translateX(3.4rem);
+    -moz-transform: translateX(3.4rem);
+    -o-transform: translateX(3.4rem);
 }
 
 /*************************************************
@@ -320,6 +331,10 @@ input:checked + .slider:before {
     -webkit-box-sizing: border-box;
     -ms-box-sizing: border-box;
     box-sizing: border-box;
+    -webkit-transform: rotate(22.5deg);
+    -moz-transform: rotate(22.5deg);
+    -ms-transform: rotate(22.5deg);
+    -o-transform: rotate(22.5deg);
     transform: rotate(22.5deg);
 }
 
