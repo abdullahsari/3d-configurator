@@ -92,7 +92,7 @@ export default class MaterialProvider {
      * @returns {BABYLON.StandardMaterial}
      */
     black() {
-        const mat = new BABYLON.StandardMaterial('wood', Scene);
+        const mat = new BABYLON.StandardMaterial('black', Scene);
         mat.alpha = 1;
         mat.backFaceCulling = true;
         mat.specularPower = 64;
