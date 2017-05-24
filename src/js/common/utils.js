@@ -17,3 +17,12 @@ export const displayError = message => {
         document.body.removeChild(div);
     }, 2000);
 };
+
+// Keeps clicking until mouse is released
+export const clickAndHold = (action, params = []) => {
+    const loop = setInterval(() => {action(...params)}, 50);
+    const undo = document.body.addEventListener('mouseup', () => {
+        clearInterval(loop);
+        document.body.removeEventListener('mouseup', undo);
+    });
+};

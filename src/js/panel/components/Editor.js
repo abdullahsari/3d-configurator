@@ -29,28 +29,28 @@ export default class Editor {
         document.getElementById('rotate').addEventListener('click', () => { this.rotate() });
 
         // Translate X
-        document.getElementById('minX').addEventListener('click', () => { this.translate('x', false) });
-        document.getElementById('plusX').addEventListener('click', () => { this.translate('x', true) });
+        document.getElementById('minX').addEventListener('mousedown', () => { Utils.clickAndHold(this.translate, ['x', false]) });
+        document.getElementById('plusX').addEventListener('mousedown', () => { Utils.clickAndHold(this.translate, ['x', true]) });
 
         // Translate Y
-        document.getElementById('minY').addEventListener('click', () => { this.translate('y', false) });
-        document.getElementById('plusY').addEventListener('click', () => { this.translate('y', true) });
+        document.getElementById('minY').addEventListener('mousedown', () => { Utils.clickAndHold(this.translate, ['y', false]) });
+        document.getElementById('plusY').addEventListener('mousedown', () => { Utils.clickAndHold(this.translate, ['y', true]) });
 
         // Translate Z
-        document.getElementById('minZ').addEventListener('click', () => { this.translate('z', false) });
-        document.getElementById('plusZ').addEventListener('click', () => { this.translate('z', true) });
+        document.getElementById('minZ').addEventListener('mousedown', () => { Utils.clickAndHold(this.translate, ['z', false]) });
+        document.getElementById('plusZ').addEventListener('mousedown', () => { Utils.clickAndHold(this.translate, ['z', true]) });
 
         // Scale X
-        document.getElementById('sminX').addEventListener('click', () => { this.scale('x', false) });
-        document.getElementById('splusX').addEventListener('click', () => { this.scale('x', true) });
+        document.getElementById('sminX').addEventListener('mousedown', () => { Utils.clickAndHold(this.scale, ['x', false]) });
+        document.getElementById('splusX').addEventListener('mousedown', () => { Utils.clickAndHold(this.scale, ['x', true]) });
 
         // Scale Y
-        document.getElementById('sminY').addEventListener('click', () => { this.scale('y', false) });
-        document.getElementById('splusY').addEventListener('click', () => { this.scale('y', true) });
+        document.getElementById('sminY').addEventListener('mousedown', () => { Utils.clickAndHold(this.scale, ['y', false]) });
+        document.getElementById('splusY').addEventListener('mousedown', () => { Utils.clickAndHold(this.scale, ['y', true]) });
 
         // Scale Z
-        document.getElementById('sminZ').addEventListener('click', () => { this.scale('z', false) });
-        document.getElementById('splusZ').addEventListener('click', () => { this.scale('z', true) });
+        document.getElementById('sminZ').addEventListener('mousedown', () => { Utils.clickAndHold(this.scale, ['z', false]) });
+        document.getElementById('splusZ').addEventListener('mousedown', () => { Utils.clickAndHold(this.scale, ['z', true]) });
     }
 
     /**
